@@ -4,8 +4,6 @@ class Ride < ActiveRecord::Base
 
   enum status: [:active, :accepted, :picked_up, :completed]
 
-  validates :rider_id, presence: true
-  validates :driver_id, presence: true
   validates :pickup, presence: true
   validates :dropoff, presence: true
   validates :passenger_number, presence: true

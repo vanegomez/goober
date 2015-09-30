@@ -10,16 +10,6 @@ RSpec.describe Ride, type: :model do
     expect(ride).to be_valid
   end
 
-  it 'is invalid without a rider' do
-    ride.rider_id = nil
-    expect(ride).to_not be_valid
-  end
-
-  it 'is invalid without a driver' do
-    ride.driver_id = nil
-    expect(ride).to_not be_valid
-  end
-
   it 'is invalid without a pickup address' do
     ride.pickup = nil
     expect(ride).to_not be_valid

@@ -1,0 +1,12 @@
+<div class="row">
+  <h2>Where do you want to go?</h2>
+  <%= form_for @ride do |f| %>
+    <%= f.label :pickup, "Pickup Address" %>
+    <%= f.text_field :pickup %>
+    <%= f.label :dropoff, "Dropoff Address" %>
+    <%= f.text_field :dropoff %>
+    <%= f.label :passenger_number, "Number of Passengers" %>
+    <%= f.text_field :passenger_number %>
+    <%= f.submit "Request a ride" %>
+  <% end %>
+</div>
