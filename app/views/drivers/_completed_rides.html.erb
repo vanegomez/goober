@@ -9,6 +9,7 @@
     <th>Accepted Time</th>
     <th>Pickup Time</th>
     <th>Dropoff Time</th>
+    <th>Cost</th>
   </tr>
   <% current_driver.completed_rides.each do |ride| %>
     <tr>
@@ -20,6 +21,7 @@
       <td><%= ride.accepted_time %></td>
       <td><%= ride.pickup_time %></td>
       <td><%= ride.dropoff_time %></td>
+      <td>$<%= ride.cost %></td>
     </tr>
   <% end %>
 </table>

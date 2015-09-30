@@ -23,4 +23,14 @@ class Ride < ActiveRecord::Base
   def car_model
     driver.car_model
   end
+
+  def cost
+    total_time = self.dropoff_time - self.pickup_time
+    subtotal = (total_time / 180) * 2
+    total = subtotal.round(2)
+    if total < 3
+      total = 3
+    end
+    total
+  end
 end
