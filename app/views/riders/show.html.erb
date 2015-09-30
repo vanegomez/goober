@@ -1,14 +1,14 @@
 <div class="row">
   <h2><%= current_rider.name.capitalize %>, let's ride dashboard!</h2>
 
-  <% if current_rider.active_ride %>
+  <% if current_rider.active_ride.length == 1 %>
     <h3>You have an active ride request</h3>
     <% current_rider.active_ride.each do |ride| %>
       <ul>
         <li>Pickup address: <%= ride.pickup %></li>
         <li>Dropoff address: <%= ride.dropoff %></li>
         <li>Passengers: <%= ride.passenger_number %></li>
-        <li>Status: <%= ride.status.capitalize %></li>
+        <li>Status: <%= ride.status.parameterize.capitalize %></li>
         <% if ride.status == "accepted" %>
           <li>Driver: <%= ride.driver_name %></li>
           <li>Car Info: <%= ride.car_make.capitalize %>, <%= ride.car_model.capitalize %></li>
@@ -18,8 +18,9 @@
 
   <% else %>
 
-    <%= link_to "request a ride", new_ride_path %>
+    <h4><%= link_to "Request a Ride", new_ride_path %></h4>
 
+    <hr>
   <% end %>
 
   <%= render "completed_rides" %>

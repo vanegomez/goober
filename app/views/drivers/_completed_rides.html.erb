@@ -1,7 +1,7 @@
 <h3>Completed Rides</h3>
 <table>
   <tr>
-    <th>Driver</th>
+    <th>Rider</th>
     <th>Pickup</th>
     <th>Dropoff</th>
     <th>Passengers</th>
@@ -10,9 +10,9 @@
     <th>Pickup Time</th>
     <th>Dropoff Time</th>
   </tr>
-  <% current_rider.completed_rides.each do |ride| %>
+  <% current_driver.completed_rides.each do |ride| %>
     <tr>
-      <td><%= ride.driver_name %></td>
+      <td><%= ride.rider_name %></td>
       <td><%= ride.pickup %></td>
       <td><%= ride.dropoff %></td>
       <td><%= ride.passenger_number %></td>

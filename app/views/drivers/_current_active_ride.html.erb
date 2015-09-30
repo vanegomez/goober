@@ -1,0 +1,13 @@
+  <ul>
+    <li>Rider Name: <%= ride.rider_name.capitalize %></li>
+    <li>Pickup address: <%= ride.pickup %></li>
+    <li>Dropoff address: <%= ride.dropoff %></li>
+    <li>Passengers: <%= ride.passenger_number %></li>
+    <li>Status: <%= ride.status.parameterize.capitalize %> |
+  <% if ride.status == "accepted" %>
+    <%= link_to "Pick up Rider", ride_path(ride), method: :put %>
+  <% elsif ride.status == "picked_up" %>
+    <%= link_to "Complete Ride", ride_path(ride), method: :put %>
+  <% end %>
+    </li>
+  </ul>

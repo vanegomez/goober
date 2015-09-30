@@ -11,4 +11,8 @@ class Rider < ActiveRecord::Base
   def active_ride
     rides.where.not(status: 3)
   end
+
+  def completed_rides
+    rides.where(status: 3)
+  end
 end

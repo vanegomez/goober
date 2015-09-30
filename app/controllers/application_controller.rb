@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def available_rides
-    Ride.where(status: 0).where("passenger_number <= ?", current_driver.car_capacity)
+    @available_rides ||= Ride.where(status: 0).where("passenger_number <= ?", current_driver.car_capacity)
   end
 end

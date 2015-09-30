@@ -1,0 +1,19 @@
+<h3>Available Rides</h3>
+<table>
+  <tr>
+    <th>Rider Name</th>
+    <th>Pickup</th>
+    <th>Dropoff</th>
+    <th>Passangers</th>
+    <th>Pickup Rider</th>
+  </tr>
+  <% available_rides.each do |ride| %>
+    <tr>
+      <td><%= ride.rider_name %></td>
+      <td><%= ride.pickup %></td>
+      <td><%= ride.dropoff %></td>
+      <td><%= ride.passenger_number %></td>
+      <td><%= link_to "Accept", ride_path(ride), method: :put %></td>
+    </tr>
+  <% end %>
+</table>
