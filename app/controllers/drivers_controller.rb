@@ -1,5 +1,5 @@
 class DriversController < ApplicationController
-  before_action 'require_driver'
+  before_action 'require_driver', except: [:new, :create]
 
   def new
     @driver = Driver.new

@@ -1,5 +1,5 @@
 class RidersController < ApplicationController
-  before_action 'require_rider'
+  before_action 'require_rider', except: [:new, :create]
 
   def new
     @rider = Rider.new
