@@ -1,0 +1,52 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Vane/turing/4module/goober/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Vane/turing/4module/goober/app/models/driver.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Vane/turing/4module/goober/app/models/ride.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Vane/turing/4module/goober/app/models/rider.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1443612405
+  }
+}

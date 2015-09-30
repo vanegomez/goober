@@ -1,0 +1,30 @@
+<div class="row">
+  <h1>Sign Up Driver</h1>
+  <%= form_for(@driver) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.label :car_make %>
+    <%= f.text_field :car_make %>
+
+    <%= f.label :car_model %>
+    <%= f.text_field :car_model %>
+
+    <%= f.label :car_capacity %>
+    <%= f.text_field :car_capacity %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

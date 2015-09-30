@@ -1,0 +1,21 @@
+<div class="row">
+  <h1>Sign Up Rider</h1>
+  <%= form_for(@rider) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
