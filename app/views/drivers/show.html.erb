@@ -1,3 +1,62 @@
 <div class="row">
   <h2><%= current_driver.name.capitalize %>, let's give someone a ride! </h2>
+
+  <% if current_driver.current_ride %>
+    <h3>Current Active Ride</h3>
+    <% current_driver.current_ride.each do |ride| %>
+      <ul>
+        <li>Rider Name: <%= ride.rider_name.capitalize %></li>
+        <li>Pickup address: <%= ride.pickup %></li>
+        <li>Dropoff address: <%= ride.dropoff %></li>
+        <li>Passengers: <%= ride.passenger_number %></li>
+        <li>Status: <%= ride.status %></li>
+      </ul>
+    <% end %>
+
+  <% else %>
+    <h3>Available Rides</h3>
+    <table>
+      <tr>
+        <th>Pickup</th>
+        <th>Dropoff</th>
+        <th>Passangers</th>
+        <th>Pickup Rider</th>
+      </tr>
+      <% available_rides.each do |ride| %>
+        <tr>
+          <td><%= ride.rider_name %></td>
+          <td><%= ride.pickup %></td>
+          <td><%= ride.dropoff %></td>
+          <td><%= ride.passenger_number %></td>
+          <td><%= link_to "Accept", ride_path(ride), method: :put %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <h3>Completed Rides</h3>
+  <table>
+    <tr>
+      <th>Rider Name</th>
+      <th>Pickup</th>
+      <th>Dropoff</th>
+      <th>Passengers</th>
+      <th>Requested Time</th>
+      <th>Accepted Time</th>
+      <th>Pickup Time</th>
+      <th>Dropoff Time</th>
+    </tr>
+    <% current_driver.completed_rides.each do |ride| %>
+    <tr>
+      <td>ride.rider_name</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </table>
 </div>

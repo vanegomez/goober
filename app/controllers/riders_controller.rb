@@ -1,4 +1,6 @@
 class RidersController < ApplicationController
+  before_action 'require_rider'
+
   def new
     @rider = Rider.new
   end
@@ -18,5 +20,9 @@ class RidersController < ApplicationController
 
   def rider_params
     params.require(:rider).permit(:name, :email, :phone, :password, :password_confirmation)
+  end
+
+  def require_rider
+    render root_path if current_rider == nil
   end
 end

@@ -9,6 +9,6 @@ class Rider < ActiveRecord::Base
   has_many :drivers, through: :rides
 
   def active_ride
-    rides.where.not(status: 4)
+    rides.where.not(status: 3)
   end
 end

@@ -10,4 +10,12 @@ class Driver < ActiveRecord::Base
 
   has_many :rides
   has_many :riders, through: :rides
+
+  def current_ride
+    rides.where.not(status: 3)
+  end
+
+  def completed_rides
+    rides.where(status: 3)
+  end
 end
