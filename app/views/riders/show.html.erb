@@ -8,11 +8,12 @@
         <li>Pickup address: <%= ride.pickup %></li>
         <li>Dropoff address: <%= ride.dropoff %></li>
         <li>Passengers: <%= ride.passenger_number %></li>
-        <li>Status: <%= ride.status.parameterize.capitalize %></li>
+        <li>Status: <%= ride.status.capitalize %></li>
         <% if ride.status == "accepted" %>
           <li>Driver: <%= ride.driver_name %></li>
           <li>Car Info: <%= ride.car_make.capitalize %>, <%= ride.car_model.capitalize %></li>
         <% end %>
+        <li>This is </li>
       </ul>
     <% end %>
 

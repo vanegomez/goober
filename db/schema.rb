@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930101718) do
+ActiveRecord::Schema.define(version: 20150930204529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20150930101718) do
     t.string   "email"
     t.integer  "phone",           limit: 8
     t.string   "password_digest"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "role",                      default: 0
   end
 
   create_table "rides", force: :cascade do |t|
@@ -54,6 +55,13 @@ ActiveRecord::Schema.define(version: 20150930101718) do
 
   add_index "rides", ["driver_id"], name: "index_rides_on_driver_id", using: :btree
   add_index "rides", ["rider_id"], name: "index_rides_on_rider_id", using: :btree
+
+  create_table "rushes", force: :cascade do |t|
+    t.integer  "ride_id"
+    t.boolean  "rush",       default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   add_foreign_key "rides", "drivers"
   add_foreign_key "rides", "riders"

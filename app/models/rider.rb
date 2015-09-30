@@ -8,6 +8,8 @@ class Rider < ActiveRecord::Base
   has_many :rides
   has_many :drivers, through: :rides
 
+  enum role: [:default, :admin]
+
   def active_ride
     rides.where.not(status: 3)
   end

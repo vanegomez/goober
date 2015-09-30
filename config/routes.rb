@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get    '/driver_login',  to: 'driver_sessions#new'
   post   '/driver_login',  to: 'driver_sessions#create'
   delete '/driver_logout', to: 'driver_sessions#destroy'
+
+  namespace :admin do
+    resources :rushes, only: [:index, :new, :create, :delete]
+  end
 end
